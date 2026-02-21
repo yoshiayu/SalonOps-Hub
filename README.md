@@ -9,7 +9,7 @@ SalonOps Hub は、直営/FCを含む複数店舗・メーカー/OEM部門のデ
 
 ## 1) 全体像
 
-![System Architecture](docs/images/system-architecture.svg)
+![System Architecture](docs/images/system-architecture.png)
 
 ## 2) 画面遷移（MVP）
 
@@ -172,6 +172,7 @@ SalonOps Hub/
 │   └── .env.example
 ├── docs/
 │   ├── images/
+│   │   ├── system-architecture.png
 │   │   ├── system-architecture.svg
 │   │   ├── screen-flow.svg
 │   │   └── runbook-flow.svg
