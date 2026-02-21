@@ -1,0 +1,25 @@
+# Node
+node_modules/
+.next/
+out/
+coverage/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+
+# Build
+backend/.mypy_cache/
+backend/.ruff_cache/
+frontend/.turbo/

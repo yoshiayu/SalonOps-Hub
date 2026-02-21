@@ -1,0 +1,217 @@
+openapi: 3.1.0
+info:
+  title: SalonOps Hub API
+  version: 0.1.0
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /health:
+    get:
+      summary: Health Check
+      responses:
+        '200':
+          description: OK
+  /auth/login:
+    get:
+      summary: Start Google OAuth
+      responses:
+        '200':
+          description: OAuth URL
+  /auth/callback:
+    get:
+      summary: OAuth callback
+      parameters:
+        - in: query
+          name: code
+          schema: { type: string }
+      responses:
+        '200':
+          description: Callback accepted
+  /auth/logout:
+    post:
+      summary: Logout
+      responses:
+        '200':
+          description: Logged out
+  /me:
+    get:
+      summary: Current user
+      responses:
+        '200':
+          description: User profile
+  /masters/stores:
+    get:
+      summary: List stores
+      parameters:
+        - in: query
+          name: type
+          schema: { type: string, enum: [DIRECT, FC] }
+        - in: query
+          name: area
+          schema: { type: string }
+        - in: query
+          name: manager
+          schema: { type: string }
+      responses:
+        '200':
+          description: Store list
+    post:
+      summary: Create store
+      responses:
+        '201':
+          description: Created
+  /masters/stores/{store_id}:
+    put:
+      summary: Update store
+      parameters:
+        - in: path
+          name: store_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Updated
+  /masters/kpi-defs:
+    get:
+      summary: List KPI definitions
+      responses:
+        '200':
+          description: KPI definitions
+    post:
+      summary: Create KPI definition
+      responses:
+        '201':
+          description: Created
+  /masters/kpi-defs/{kpi_id}:
+    put:
+      summary: Update KPI definition
+      parameters:
+        - in: path
+          name: kpi_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Updated
+  /imports/sales:
+    post:
+      summary: Upload and validate CSV
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Import job result
+  /imports/{import_id}:
+    get:
+      summary: Import result
+      parameters:
+        - in: path
+          name: import_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Import status
+  /imports/{import_id}/errors:
+    get:
+      summary: Import errors
+      parameters:
+        - in: path
+          name: import_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Error list
+  /kpi/summary:
+    get:
+      summary: KPI summary
+      parameters:
+        - in: query
+          name: scope
+          schema: { type: string, enum: [company, biz, store] }
+        - in: query
+          name: period
+          schema: { type: string, enum: [weekly, monthly, quarterly, yearly] }
+        - in: query
+          name: from_date
+          schema: { type: string, format: date }
+        - in: query
+          name: to_date
+          schema: { type: string, format: date }
+      responses:
+        '200':
+          description: KPI summary payload
+  /kpi/trends:
+    get:
+      summary: KPI trends
+      responses:
+        '200':
+          description: Trend points
+  /alerts:
+    get:
+      summary: Alert list
+      responses:
+        '200':
+          description: Alerts
+  /reports/generate:
+    post:
+      summary: Generate report
+      responses:
+        '201':
+          description: Created report
+  /reports:
+    get:
+      summary: List reports
+      responses:
+        '200':
+          description: Report list
+  /reports/{report_id}:
+    get:
+      summary: Report detail
+      parameters:
+        - in: path
+          name: report_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Report detail
+  /reports/{report_id}/send:
+    post:
+      summary: Resend report
+      parameters:
+        - in: path
+          name: report_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Sent
+  /audit/logs:
+    get:
+      summary: Audit logs
+      parameters:
+        - in: query
+          name: from_date
+          schema: { type: string, format: date }
+        - in: query
+          name: to_date
+          schema: { type: string, format: date }
+        - in: query
+          name: user
+          schema: { type: string }
+        - in: query
+          name: action
+          schema: { type: string }
+      responses:
+        '200':
+          description: Logs

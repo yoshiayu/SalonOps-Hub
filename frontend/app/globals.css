@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 8%;
+  --foreground: 210 40% 98%;
+  --card: 222 36% 12%;
+  --card-foreground: 210 40% 98%;
+  --primary: 158 85% 43%;
+  --primary-foreground: 222 47% 8%;
+  --secondary: 215 19% 22%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 215 16% 20%;
+  --muted-foreground: 215 20% 70%;
+  --accent: 158 85% 43%;
+  --accent-foreground: 222 47% 8%;
+  --border: 217 17% 27%;
+  --input: 217 17% 27%;
+  --ring: 158 85% 43%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Noto Sans JP", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">SalonOps Hub System Architecture</title>
+  <desc id="desc">Data sources, backend API, frontend app, and output integrations.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#34d399"/>
+    </marker>
+    <style>
+      .title { fill: #e5e7eb; font: 700 34px 'Noto Sans JP', sans-serif; }
+      .subtitle { fill: #9ca3af; font: 500 18px 'Noto Sans JP', sans-serif; }
+      .h { fill: #d1fae5; font: 700 22px 'Noto Sans JP', sans-serif; }
+      .t { fill: #cbd5e1; font: 500 16px 'Noto Sans JP', sans-serif; }
+      .small { fill: #94a3b8; font: 500 14px 'Noto Sans JP', sans-serif; }
+      .box { fill: url(#panel); stroke: #1f2937; stroke-width: 2; rx: 16; }
+      .accent { fill: #052e2b; stroke: #34d399; stroke-width: 2; rx: 16; }
+      .line { stroke: #34d399; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="780" fill="url(#bg)"/>
+
+  <text x="58" y="68" class="title">SalonOps Hub Architecture</text>
+  <text x="58" y="102" class="subtitle">Google Workspace 중심의業務データ統合 / KPI可視化 / レポート自動化</text>
+
+  <rect x="52" y="150" width="340" height="560" class="box"/>
+  <text x="80" y="192" class="h">Data Sources</text>
+
+  <rect x="80" y="228" width="284" height="84" class="accent"/>
+  <text x="102" y="264" class="t">Google Sheets</text>
+  <text x="102" y="288" class="small">店舗入力 / CSVテンプレ運用</text>
+
+  <rect x="80" y="330" width="284" height="84" class="accent"/>
+  <text x="102" y="366" class="t">CSV Upload</text>
+  <text x="102" y="390" class="small">売上 / 客数 / 在庫 / 広告</text>
+
+  <rect x="80" y="432" width="284" height="84" class="accent"/>
+  <text x="102" y="468" class="t">Google APIs</text>
+  <text x="102" y="492" class="small">Drive / Gmail / Calendar</text>
+
+  <rect x="80" y="534" width="284" height="84" class="accent"/>
+  <text x="102" y="570" class="t">Future External APIs</text>
+  <text x="102" y="594" class="small">POS / Reservation / Ads</text>
+
+  <rect x="464" y="150" width="500" height="560" class="box"/>
+  <text x="492" y="192" class="h">Core Platform</text>
+
+  <rect x="492" y="228" width="444" height="100" class="accent"/>
+  <text x="516" y="264" class="t">FastAPI (REST)</text>
+  <text x="516" y="288" class="small">ETL validation / KPI aggregation / audit logs / report jobs</text>
+
+  <rect x="492" y="348" width="444" height="100" class="accent"/>
+  <text x="516" y="384" class="t">Next.js 14 App Router</text>
+  <text x="516" y="408" class="small">Dashboard / Master / Import / Reports / RBAC UI</text>
+
+  <rect x="492" y="468" width="444" height="100" class="accent"/>
+  <text x="516" y="504" class="t">Auth & Governance</text>
+  <text x="516" y="528" class="small">NextAuth + Google OAuth (OIDC) / Role-based access control</text>
+
+  <rect x="492" y="588" width="444" height="84" class="accent"/>
+  <text x="516" y="624" class="t">Storage Strategy</text>
+  <text x="516" y="648" class="small">Current: in-memory abstraction / Future: PostgreSQL migration</text>
+
+  <rect x="1036" y="150" width="312" height="560" class="box"/>
+  <text x="1064" y="192" class="h">Outputs</text>
+
+  <rect x="1064" y="228" width="256" height="90" class="accent"/>
+  <text x="1086" y="264" class="t">KPI Dashboard</text>
+  <text x="1086" y="288" class="small">Store / Biz / Company views</text>
+
+  <rect x="1064" y="338" width="256" height="90" class="accent"/>
+  <text x="1086" y="374" class="t">Auto Reports</text>
+  <text x="1086" y="398" class="small">Weekly / Monthly / resend</text>
+
+  <rect x="1064" y="448" width="256" height="90" class="accent"/>
+  <text x="1086" y="484" class="t">Audit Trails</text>
+  <text x="1086" y="508" class="small">who / when / what changed</text>
+
+  <rect x="1064" y="558" width="256" height="90" class="accent"/>
+  <text x="1086" y="594" class="t">Looker Studio</text>
+  <text x="1086" y="618" class="small">Operational visualization</text>
+
+  <path d="M392 270 C 430 270, 430 270, 462 270" class="line"/>
+  <path d="M392 372 C 430 372, 430 372, 462 372" class="line"/>
+  <path d="M392 474 C 430 474, 430 474, 462 474" class="line"/>
+  <path d="M392 576 C 430 576, 430 576, 462 576" class="line"/>
+
+  <path d="M964 278 C 996 278, 996 278, 1034 278" class="line"/>
+  <path d="M964 388 C 996 388, 996 388, 1034 388" class="line"/>
+  <path d="M964 498 C 996 498, 996 498, 1034 498" class="line"/>
+  <path d="M964 608 C 996 608, 996 608, 1034 608" class="line"/>
+</svg>

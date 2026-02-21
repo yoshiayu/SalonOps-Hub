@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Startup Runbook</title>
+  <desc id="desc">Quick startup flow for frontend and backend on macOS.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#34d399"/>
+    </marker>
+    <style>
+      .title { fill: #e5e7eb; font: 700 34px 'Noto Sans JP', sans-serif; }
+      .sub { fill: #9ca3af; font: 500 18px 'Noto Sans JP', sans-serif; }
+      .box { fill: #0f172a; stroke: #34d399; stroke-width: 2; rx: 14; }
+      .h { fill: #d1fae5; font: 700 18px 'Noto Sans JP', sans-serif; }
+      .t { fill: #cbd5e1; font: 500 15px 'JetBrains Mono', monospace; }
+      .line { stroke: #34d399; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)"/>
+
+  <text x="58" y="68" class="title">Startup Runbook (Docker-Free)</text>
+  <text x="58" y="102" class="sub">ローカル開発での最短起動手順</text>
+
+  <rect x="80" y="170" width="290" height="130" class="box"/>
+  <text x="108" y="208" class="h">Step 1: Install deps</text>
+  <text x="108" y="238" class="t">npm install</text>
+  <text x="108" y="264" class="t">cd backend &amp;&amp; pip install -r requirements.txt</text>
+
+  <rect x="450" y="170" width="420" height="130" class="box"/>
+  <text x="478" y="208" class="h">Step 2: Start Backend (FastAPI)</text>
+  <text x="478" y="238" class="t">cd backend</text>
+  <text x="478" y="262" class="t">source .venv/bin/activate</text>
+  <text x="478" y="286" class="t">PYTHONPATH=. uvicorn app.main:app --reload --port 8000</text>
+
+  <rect x="950" y="170" width="360" height="130" class="box"/>
+  <text x="978" y="208" class="h">Step 3: Start Frontend</text>
+  <text x="978" y="238" class="t">cd frontend</text>
+  <text x="978" y="262" class="t">npm run dev -- -p 3005</text>
+
+  <rect x="240" y="420" width="420" height="180" class="box"/>
+  <text x="268" y="458" class="h">Health Check</text>
+  <text x="268" y="490" class="t">curl http://127.0.0.1:8000/health</text>
+  <text x="268" y="520" class="t">curl \"http://127.0.0.1:8000/kpi/summary?scope=company&amp;period=monthly&amp;from_date=2026-02-01&amp;to_date=2026-02-21\"</text>
+  <text x="268" y="550" class="t">curl http://127.0.0.1:3005/api/kpi/summary</text>
+
+  <rect x="760" y="420" width="460" height="180" class="box"/>
+  <text x="788" y="458" class="h">Open in Browser</text>
+  <text x="788" y="490" class="t">http://localhost:3005/dashboard</text>
+  <text x="788" y="520" class="t">http://localhost:3005/imports</text>
+  <text x="788" y="550" class="t">http://127.0.0.1:8000/docs</text>
+
+  <path d="M370 235 L 448 235" class="line"/>
+  <path d="M870 235 L 948 235" class="line"/>
+  <path d="M1130 300 C 1130 360, 980 360, 980 418" class="line"/>
+  <path d="M660 300 C 660 360, 450 360, 450 418" class="line"/>
+</svg>
