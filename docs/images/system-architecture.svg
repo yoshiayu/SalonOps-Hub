@@ -61,7 +61,7 @@
   <text x="516" y="408" class="small">Dashboard / Master / Import / Reports / RBAC UI</text>
 
   <rect x="492" y="468" width="444" height="100" class="accent"/>
-  <text x="516" y="504" class="t">Auth & Governance</text>
+  <text x="516" y="504" class="t">Auth &amp; Governance</text>
   <text x="516" y="528" class="small">NextAuth + Google OAuth (OIDC) / Role-based access control</text>
 
   <rect x="492" y="588" width="444" height="84" class="accent"/>
