@@ -9,15 +9,15 @@ SalonOps Hub は、直営/FCを含む複数店舗・メーカー/OEM部門のデ
 
 ## 1) 全体像
 
-![System Architecture](docs/images/system-architecture.png)
+<img src="docs/images/system-architecture.png" alt="System Architecture" width="100%" />
 
 ## 2) 画面遷移（MVP）
 
-![Screen Flow](docs/images/screen-flow.svg)
+<img src="docs/images/screen-flow.svg" alt="Screen Flow" width="100%" />
 
 ## 3) 起動Runbook（Dockerなし）
 
-![Startup Runbook](docs/images/runbook-flow.svg)
+<img src="docs/images/runbook-flow.svg" alt="Startup Runbook" width="100%" />
 
 ## 4) クイックスタート（Mac）
 
